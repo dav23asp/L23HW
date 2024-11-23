@@ -17,7 +17,7 @@ def generate_sine_wave(frequency=1, amplitude=1, duration=1, sampling_rate=100):
         y (numpy.ndarray): Sine wave values.
     """
     t = np.linspace(0, duration, int(sampling_rate * duration), endpoint=False)  # Time vector
-    y = amplitude * np.sin(2 * np.pi * frequency * t)  # Sine wave formula
+    y = amplitude * np.sin(2 * np.pi * frequency * t)
     return t, y
 
 
@@ -34,7 +34,7 @@ def plot_sine_wave(frequency=1, amplitude=1, duration=1, sampling_rate=100):
     t, y = generate_sine_wave(frequency, amplitude, duration, sampling_rate)
 
     # Plot the sine wave
-    plt.figure(figsize=(10, 5))
+    plt.figure(figsize=(10, 10))
     plt.plot(t, y, label=f'{frequency}Hz Sine Wave')
     plt.title("Sine Wave")
     plt.xlabel("Time (s)")
@@ -43,8 +43,7 @@ def plot_sine_wave(frequency=1, amplitude=1, duration=1, sampling_rate=100):
     plt.legend()
     plt.show()
 
+##The one that actually prints
 
-# Example usage
 if __name__ == "__main__":
-    # Generate and plot a sine wave with a frequency of 5Hz, amplitude of 1, and duration of 2 seconds
-    plot_sine_wave(frequency=5, amplitude=1, duration=2, sampling_rate=500)
+    plot_sine_wave(frequency=1, amplitude=1, duration=2, sampling_rate=500)
